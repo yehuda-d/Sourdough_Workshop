@@ -406,15 +406,20 @@ section[id] { scroll-margin-top: var(--header-h); }
 }
 
 /* ===== המלצות - בעיצוב צ'אט וואטסאפ ===== */
-/* פריסת "קיר" - חלונות בגבהים שונים זה לצד זה */
+/* רשת סימטרית - 3 בשורה, וכל החלונות באותה שורה באותו גובה */
 .wa-grid {
-  columns: 3 300px;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .wa-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 }
 
 .wa-chat {
-  break-inside: avoid;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -443,9 +448,10 @@ section[id] { scroll-margin-top: var(--header-h); }
 .wa-subtitle { font-size: 0.8rem; opacity: 0.85; }
 
 .wa-body {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 10px;
   padding: 16px 16px 18px;
   background-color: #efeae2;
@@ -455,7 +461,7 @@ section[id] { scroll-margin-top: var(--header-h); }
 
 .wa-msg {
   position: relative;
-  max-width: 92%;
+  margin-inline-start: 8px;
   padding: 6px 10px 6px;
   background: var(--white);
   border-radius: 8px;
