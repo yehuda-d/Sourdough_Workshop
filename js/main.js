@@ -1,3 +1,9 @@
+// כניסה לאתר תמיד מתחילה מראש הדף - גם אם בקישור יש # (למשל #testimonials)
+// וגם כשהדפדפן מנסה לחזור למקום שבו היינו לפני רענון
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }));
+
 // תפריט נפתח במובייל
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
