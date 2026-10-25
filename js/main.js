@@ -91,3 +91,41 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// הקלטת פתיחה - מתנגנת פעם אחת בכל ביקור.
+// דפדפנים חוסמים קול לפני שהגולש נגע בדף, ולכן אם הניסיון הראשון נחסם
+// ההקלטה תתחיל בלחיצה / נגיעה / הקשה הראשונה בדף.
+const welcomeAudio = document.getElementById('welcome-audio');
+const firstInteractionEvents = ['pointerdown', 'keydown', 'touchstart'];
+let audioStarted = false;
+
+function alreadyPlayedThisVisit() {
+  try { return sessionStorage.getItem('welcomeAudioPlayed') === '1'; } catch { return false; }
+}
+
+function markPlayed() {
+  try { sessionStorage.setItem('welcomeAudioPlayed', '1'); } catch {}
+}
+
+function stopWaitingForInteraction() {
+  firstInteractionEvents.forEach((type) => document.removeEventListener(type, playWelcomeAudio));
+}
+
+function playWelcomeAudio() {
+  if (audioStarted) return;
+  welcomeAudio.play().then(() => {
+    audioStarted = true;
+    markPlayed();
+    stopWaitingForInteraction();
+  }).catch(() => {
+    // נחסם - מחכים לאינטראקציה הראשונה
+  });
+}
+
+if (!alreadyPlayedThisVisit()) {
+  firstInteractionEvents.forEach((type) => document.addEventListener(type, playWelcomeAudio));
+  playWelcomeAudio();
+}
+
+// אם קובץ האודיו לא קיים - לא עושים כלום
+welcomeAudio.addEventListener('error', stopWaitingForInteraction);

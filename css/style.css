@@ -632,7 +632,6 @@ section[id] { scroll-margin-top: var(--header-h); }
 }
 
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
-
 /* ===== תמונה מוגדלת ===== */
 .lightbox {
   position: fixed;
