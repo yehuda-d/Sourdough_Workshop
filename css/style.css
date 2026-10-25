@@ -524,6 +524,31 @@ section[id] { scroll-margin-top: var(--header-h); }
   box-shadow: var(--shadow);
 }
 
+/* "בנימה אישית" - פנייה אישית של ידידיה */
+.about-personal {
+  margin: 28px 0 0;
+  padding: 20px 24px;
+  background: var(--white);
+  border-inline-start: 4px solid var(--wheat);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.about-personal p { margin: 0 0 8px; }
+
+.about-personal-title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--crust-dark);
+}
+
+.about-personal footer {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 700;
+  color: var(--crust);
+}
+
 /* ===== רשתות חברתיות ===== */
 .social-links {
   display: flex;
