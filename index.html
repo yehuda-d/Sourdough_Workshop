@@ -25,7 +25,7 @@
         <a href="#basics">על הסדנה</a>
         <a href="#syllabus">סילבוס</a>
         <a href="#gallery">תמונות</a>
-        <a href="#places">היינו ב...</a>
+        <!-- מוסתר זמנית, ראו הערה במקטע המקומות: <a href="#places">היינו ב...</a> -->
         <a href="#testimonials">המלצות</a>
         <a href="#about">אודות</a>
         <a href="#contact" class="nav-cta">להזמנת סדנה</a>
@@ -59,7 +59,7 @@
         <a href="#basics" class="topic-card"><span class="topic-icon">🥖</span><span>פרטים על הסדנה</span></a>
         <a href="#syllabus" class="topic-card"><span class="topic-icon">📋</span><span>סילבוס מורחב</span></a>
         <a href="#gallery" class="topic-card"><span class="topic-icon">📸</span><span>תמונות מסדנאות</span></a>
-        <a href="#places" class="topic-card"><span class="topic-icon">📍</span><span>איפה כבר היינו</span></a>
+        <!-- מוסתר זמנית, ראו הערה במקטע המקומות: <a href="#places" class="topic-card"><span class="topic-icon">📍</span><span>איפה כבר היינו</span></a> -->
         <a href="#testimonials" class="topic-card"><span class="topic-icon">💬</span><span>המלצות</span></a>
         <a href="#about" class="topic-card"><span class="topic-icon">👨‍🍳</span><span>אודות ידידיה</span></a>
         <a href="#social" class="topic-card"><span class="topic-icon">📱</span><span>פייסבוק ואינסטגרם</span></a>
@@ -140,9 +140,14 @@
     </div>
   </section>
 
-  <!-- מקומות שהעברנו בהם סדנאות.
+  <!-- מוסתר זמנית עד שיהיו עוד מקומות. הלוגואים נשארים ב-images/logos.
+       להחזרה: מסירים את סימני ההערה סביב המקטע הזה, וגם סביב הקישור בתפריט ובכרטיס "איפה כבר היינו".
+       בנוסף: section-alt חוזר ל"אודות" בלבד (יורד מ"המלצות" ומ"רשתות חברתיות"),
+       ומוחקים את grid-column מ-.topic-card-cta ב-style.css.
+
+       מקומות שהעברנו בהם סדנאות.
        להוספת לוגו: שמרו קובץ בשם המופיע ב-src (למשל images/logos/almagor.jpg).
-       אם הקובץ לא קיים, יוצג שם המקום במקום הלוגו. -->
+       אם הקובץ לא קיים, יוצג שם המקום במקום הלוגו.
   <section id="places" class="section section-alt">
     <div class="container">
       <h2 class="section-title">מקומות שכבר היינו בהם</h2>
@@ -157,11 +162,12 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- המלצות - כל אחת בחלון וואטסאפ נפרד.
        להוספת המלצה: מעתיקים בלוק wa-chat שלם ומחליפים את הטקסט.
        אפשר להחליף את "משתתף/ת בסדנה" בשם השולח. -->
-  <section id="testimonials" class="section">
+  <section id="testimonials" class="section section-alt">
     <div class="container">
       <h2 class="section-title center">מה אומרים עלינו</h2>
       <div class="wa-grid">
@@ -312,7 +318,7 @@
   </section>
 
   <!-- אודות -->
-  <section id="about" class="section section-alt">
+  <section id="about" class="section">
     <div class="container about">
       <img class="about-photo" src="images/yedidya.jpeg" alt="ידידיה לוי מותח בצק מחמצת" loading="lazy">
       <div class="about-text">
@@ -329,7 +335,7 @@
   </section>
 
   <!-- רשתות חברתיות -->
-  <section id="social" class="section">
+  <section id="social" class="section section-alt">
     <div class="container narrow center">
       <h2 class="section-title">אפשר להתרשם גם כאן</h2>
       <div class="social-links">

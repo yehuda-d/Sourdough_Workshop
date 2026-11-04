@@ -274,6 +274,8 @@ section[id] { scroll-margin-top: var(--header-h); }
   background: var(--crust);
   color: var(--white);
   border-color: var(--crust);
+  /* ממלא את השורה האחרונה כל עוד יש 7 כרטיסים. כשכרטיס המקומות חוזר - למחוק */
+  grid-column: span 2;
 }
 
 /* ===== מקטעים ===== */
